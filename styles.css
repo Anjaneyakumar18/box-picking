@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #8df6b7;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.boxes {
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%; 
+    max-width: 600px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.box {
+    width: 18%;
+    padding-bottom: 3%; /* Maintain aspect ratio */
+    background-color: aliceblue;
+    box-shadow: 3px 3px 5px rgb(27, 22, 22);
+    position: relative;
+}
+
+.box::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* Maintain square aspect ratio */
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
