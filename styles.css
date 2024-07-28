@@ -8,6 +8,7 @@ body {
     flex-direction: column;
 }
 
+
 h1 {
     margin: 20px 0;
     text-align: center;
@@ -40,15 +41,58 @@ h1 {
     display: block;
     padding-top: 100%; /* Maintain square aspect ratio */
 }
-
+.a{
+    text-align: center;
+    width:30%;
+    height:fit-content;
+    background-color: rgb(207, 207, 220);
+    position: absolute;
+    top:35%;
+    left:30%;
+    border: 3px solid black;
+    box-shadow: 10PX 10PX rgb(46, 40, 40);
+}
+button{
+    border-radius: 4px;
+    border:3px solid black;
+    background: rgb(28, 198, 28);
+    color: black;
+    margin-bottom: 25px;
+}
+.over{
+    color: red;
+    margin-bottom: 10px;
+}
+.score{
+    border-bottom: 20px;
+}
+.numb{
+    position: absolute;
+    top:0%;
+    left:0%;
+    display: none;
+    height: 100%;
+    width:100%
+}
 @media screen and (max-width: 500px) {
     h1 {
         font-size: 1.2rem;
+    }
+    .a{
+        width: 50%;
+        position: absolute;
+        top:43%;
+        left:22%
     }
 }
 
 @media screen and (min-width: 700px) {
     h1 {
         font-size: 2rem;
+    }
+    .a{
+        position:absolute;
+        top:43%;
+        left:37.87%;
     }
 }
