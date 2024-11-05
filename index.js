@@ -1,6 +1,6 @@
-var red1 = Math.round(Math.random() * 15); 
-var red2 = Math.round(Math.random() * 15); 
-var red3 = Math.round(Math.random() * 15); 
+var red1 =1// Math.round(Math.random() * 15); 
+var red2 = 1//Math.round(Math.random() * 15); 
+var red3 = 1//Math.round(Math.random() * 15); 
 
 let score = 0;
 
