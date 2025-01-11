@@ -1,44 +1,37 @@
-var red1 =Math.round(Math.random() * 15); 
-var red2 = Math.round(Math.random() * 15); 
-var red3 = Math.round(Math.random() * 15); 
-
+// Game Initialization
+const red1 = Math.round(Math.random() * 15);
+const red2 = Math.round(Math.random() * 15);
+const red3 = Math.round(Math.random() * 15);
 let score = 0;
 
-//updating score 
-
+// Update Score Display
 function updateScore() {
-    document.querySelector('h1').innerText = `Score: ${score}`;
-} 
+    document.querySelector('header h1').innerText = `Score: ${score}`;
+}
 
-//dynamic aspects
-
+// Handle Box Click
 function clicked(index, ele) {
-    if (index === red1 || index === red2 || index===red3) {
+    if (index === red1 || index === red2 || index === red3) {
         new Audio('./wrong.mp3').play();
-        document.querySelector('.numb').style.display='block';
-        document.querySelector('body').style.backgroundColor='red';
+        document.querySelector('.numb').style.display = 'block';
         ele.style.backgroundColor = "red";
-        document.querySelector('.a').style.display='block';
+        document.body.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+        document.querySelector('.a').style.display = 'flex';
         document.querySelector('.score').innerText = `Your Score is ${score}`;
-
     } else {
         new Audio('./right.wav').play();
         ele.style.backgroundColor = "green";
-        score += 1;
-        updateScore(); 
+        score++;
+        updateScore();
     }
 }
-document.querySelector('button').addEventListener('click',function(){
-    setTimeout(() => {
-        location.reload();
 
-    }, 200);
+// Play Again Button
+document.querySelector('button').addEventListener('click', function () {
+    setTimeout(() => location.reload(), 200);
 });
- 
-//event binding
 
+// Event Binding for Boxes
 document.querySelectorAll('.boxes .row .box').forEach((ele, index) => {
-    ele.addEventListener('click', function() {
-        clicked(index, ele);
-    });
+    ele.addEventListener('click', () => clicked(index, ele));
 });
